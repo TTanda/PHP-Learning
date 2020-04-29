@@ -61,10 +61,10 @@ if (isset($_POST) && !empty($_POST)) //Making sure something was submitted.
          </label>
         <input type="submit" value="Sign In">
     </form>
-    <?php if ( !empty( $_SESSION['interests'] ) ) : ?>
+    <?php if ( !empty( $_SESSION['interests'] ) ) : //Check if there are interests ?> 
         <h2>My Interests: </h2>
         <ul>
-            <?php foreach ( $_SESSION['interests'] as $interest ) : ?>
+            <?php foreach ( $_SESSION['interests'] as $interest ) : //Output each interest in the array?>
             <li>
                 <?php echo $interest; ?>
             </li>
