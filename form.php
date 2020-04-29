@@ -1,5 +1,9 @@
 <?php
 session_start(); //BEFORE ANY OUTPUT, YOU MUST DECLARRE IF YOU'D LIKE TO USE SESSION.
+if ( !isset( $_SESSION['interests']))
+{
+    $_SESSION[ 'interests'] = array();
+}
 $message = 'Welcome to the website, please log in.';
 //If a form has been submitted to this page,we can collect the submission
 //information using one of the two SUPERGLOBALS:
@@ -57,10 +61,22 @@ if (isset($_POST) && !empty($_POST)) //Making sure something was submitted.
          </label>
         <input type="submit" value="Sign In">
     </form>
+    <?php if ( !empty( $_SESSION['interests'] ) ) : ?>
+        <h2>My Interests: </h2>
+        <ul>
+            <?php foreach ( $_SESSION['interests'] as $interest ) : ?>
+            <li>
+                <?php echo $interest; ?>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+            <?php endif; ?>
     <pre>
+        <strong>$_POST contents:</strong>
 <?php var_dump($_POST); ?>
     </pre>
     <pre>
+    <strong>$_SESSION contents:</strong> 
 <?php var_dump($_SESSION); ?>
     </pre>
 </body>
