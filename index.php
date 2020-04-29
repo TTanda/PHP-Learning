@@ -1,5 +1,5 @@
 <?php
-//String.
+//String. Concatenation is done with periods, and + is reserved for addition
 $myString = 'Hello World!';
 //Integer.
 $myInteger =34;
@@ -24,8 +24,7 @@ $myOtherArray = array(
     $myObject,
     $myArray
 );
-
-<DOCTYPE html>
+?><DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -47,5 +46,7 @@ $myOtherArray = array(
     echo $myVar;
     echo $greeting2;
     ?>
+    <h2> Include information </h2>
+    <?php include './includes/navigation.php'; ?>
 </body>
 </html>
