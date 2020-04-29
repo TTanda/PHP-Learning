@@ -24,4 +24,3 @@ $myOtherArray = array(
     $myObject,
     $myArray
 );
-?>
