@@ -49,4 +49,32 @@ class Snacks
       echo '</ul>';
     }
   }
+
+  // Find a particular snack.
+  public function findSnackByIndex ( $id = FALSE )
+  { // Check if the submission is a number (integer.)
+    if ( is_integer( $id ) )
+    { // Check if the snack at this INDEX even EXISTS!?
+      if ( isset( $this->allSnacks[$id] ) )
+      { // Retrieve that snack from the array!
+        $foundSnack = new Snack(
+          $this->allSnacks[$id]->name,
+          $this->allSnacks[$id]->price,
+          $this->allSnacks[$id]->type
+        );
+        // Output that snack!
+        $foundSnack->output();
+      }
+      // If the Snack is not found...
+      else
+      {
+        echo '<p>Sorry, we couldn\'t find a snack at ID:'.$id.'!</p>';
+      }
+    }
+    // No ID, or an invalid ID was passed.
+    else
+    {
+      echo '<p>No ID, or an invalid ID was passed; unable to find snack for ID: '.$id.'.</p>';
+    }
+  }
 }
