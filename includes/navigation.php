@@ -10,6 +10,9 @@
 <li>
 <a href="./arrays.php">Arrays</a>
 </li>
+<li>
+<a href="./oop.php">OOP</a>
+</li>
 </ul>
 </nav>
 <?php // By default, anything written in a PHP file will be sent to

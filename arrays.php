@@ -40,35 +40,35 @@ $myAssociativeArray['interests'][] = 'HTML';
     </head>
 
     <body>
-    <h1>PHP Arrays</h1>
-  <h2>Indexed Array</h2>
-  <ul>
-    <?php foreach ( $myIndexedArray as $animal ) : ?>
-      <li>
-        <?php echo( $animal ); ?>
-      </li>
-    <?php endforeach; ?>
-  </ul>
-  <h2>Associative Array</h2>
-  <dl>
-      <?php foreach ( $myAssociativeArray as $key => $value ) { // We can call upon KEY and VALUE at once in our loop! Note the fat arrow syntax. ?>
-        <dt><?php echo( $key ); // This array element's Key. ?></dt>
-        <dd>
-          <?php
-            // Checking if this is the interests (or another) array.
-            if ( is_array( $value ) )
-            { // Output each element in the array.
-              foreach ( $value as $element ) echo $element . ', ';
-            }
-            else
-            { // Display the string / integer value, otherwise.
-              echo( $value ); // This array element's Value.
-            }
-          ?>
-        </dd>
-      <?php } // Ends our foreach. ?>
-  </dl>
-</body>
-</html>
+        <h1>PHP Arrays</h1>
+        <?php include './includes/navigation.php'; ?>
+        <h2>Indexed Array</h2>
+        <ul>
+            <?php foreach ($myIndexedArray as $animal) : ?>
+                <li>
+                    <?php echo ($animal); ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+        <h2>Associative Array</h2>
+        <dl>
+            <?php foreach ($myAssociativeArray as $key => $value) { // We can call upon KEY and VALUE at once in our loop! Note the fat arrow syntax. 
+            ?>
+                <dt><?php echo ($key); // This array element's Key. 
+                    ?></dt>
+                <dd>
+                    <?php
+                    // Checking if this is the interests (or another) array.
+                    if (is_array($value)) { // Output each element in the array.
+                        foreach ($value as $element) echo $element . ', ';
+                    } else { // Display the string / integer value, otherwise.
+                        echo ($value); // This array element's Value.
+                    }
+                    ?>
+                </dd>
+            <?php } // Ends our foreach. 
+            ?>
+        </dl>
+    </body>
 
-
+    </html>
