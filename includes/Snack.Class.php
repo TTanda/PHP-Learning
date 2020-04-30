@@ -21,7 +21,7 @@ class Snack {
     if ( is_string( $type ) && !empty( $type ) )
       $this->type = $type;
   }
-  // 
+  // Outputs a snack.
   public function output ( $echo = TRUE )
   {
     $output = '';
